@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #1e1e1e;
+}
+
+/* ── Tab bar ── */
+
+#tab-bar {
+  height: 36px;
+  background: #1e1e1e;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+#tabs {
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  min-width: 80px;
+  max-width: 200px;
+  padding: 0 8px;
+  background: #2b2b2b;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  margin-right: 2px;
+  gap: 6px;
+  flex: 1;
+  user-select: none;
+}
+
+.tab.active {
+  background: #3a3a3a;
+}
+
+.tab-title {
+  flex: 1;
+  font-size: 12px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-close {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  padding: 0 2px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.tab-close:hover {
+  background: #555;
+  color: #fff;
+}
+
+#new-tab-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 8px;
+  height: 28px;
+  border-radius: 4px;
+  align-self: flex-end;
+  line-height: 1;
+}
+
+#new-tab-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* ── Toolbar ── */
+
+#toolbar {
+  height: 40px;
+  background: #2b2b2b;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #111;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 16px;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-btn:hover {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+.nav-btn:disabled {
+  color: #444;
+  cursor: default;
+}
+
+.nav-btn:disabled:hover {
+  background: none;
+}
+
+#url-bar {
+  flex: 1;
+  height: 28px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 14px;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  font-size: 13px;
+}
+
+#url-bar:focus {
+  outline: 2px solid #4a9eff;
+}
+
+/* ── Webview container ── */
+
+#webview-container {
+  flex: 1;
+  position: relative;
+}
+
+webview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+webview.active {
+  display: flex;
+}
